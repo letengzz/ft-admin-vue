@@ -5,7 +5,8 @@
 
     "paths": {
       "@/*": ["./src/*"]
-    }
+    },
+    "types": ["element-plus/global"]
   },
   "include": ["types", "src/**/*", "src/**/*.vue"],
   "exclude": ["src/**/__tests__/*"]

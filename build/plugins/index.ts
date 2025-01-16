@@ -2,7 +2,7 @@
 import vue from '@vitejs/plugin-vue'
 import vueJsx from '@vitejs/plugin-vue-jsx'
 
-import { px2remPlugin } from './px2rem'
+import { autoComponentsPlugin } from './autoImportAndComponents'
 import { svgLoaderPlugin } from './svgLoader'
 import { UnoCSSPlugin } from './UnoCSS'
 import { visualizerPlugin } from './visualizer'
@@ -17,7 +17,8 @@ export function usePlugins(isBuild: boolean, viteEnv: ViteEnv) {
   const plugins = [vue(), vueJsx()]
 
   // 开发环境&生产环境加载的插件
-  plugins.push(px2remPlugin())
+  plugins.push(...autoComponentsPlugin())
+  // plugins.push(px2remPlugin())
   plugins.push(svgLoaderPlugin())
   plugins.push(UnoCSSPlugin())
 
