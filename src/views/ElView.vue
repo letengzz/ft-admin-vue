@@ -11,6 +11,20 @@ function openVn() {
     ]),
   })
 }
+const menu = [
+  {
+    name: '增',
+    icon: IconEpPlus,
+  },
+  {
+    name: '改',
+    icon: IconEpEditPen,
+  },
+  {
+    name: '删',
+    icon: IconEpDelete,
+  },
+]
 </script>
 
 <template>
@@ -23,4 +37,8 @@ function openVn() {
   <el-button type="primary">
     你好
   </el-button>
+  <el-icon v-for="item in menu" :key="item.name">
+    <component :is="item.icon" />
+  </el-icon>
+  <el-icon><i-ep-switch-button /></el-icon>
 </template>

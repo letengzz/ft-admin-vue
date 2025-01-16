@@ -1,5 +1,7 @@
 // 自动引入和组件自动注册
 import AutoImport from 'unplugin-auto-import/vite'
+import IconsResolver from 'unplugin-icons/resolver'
+import Icons from 'unplugin-icons/vite'
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 import Components from 'unplugin-vue-components/vite'
 import { createStyleImportPlugin, ElementPlusResolve } from 'vite-plugin-style-import'
@@ -7,7 +9,9 @@ import { createStyleImportPlugin, ElementPlusResolve } from 'vite-plugin-style-i
 export function autoComponentsPlugin() {
   return [
     AutoImport({
-      resolvers: [ElementPlusResolver()],
+      resolvers: [ElementPlusResolver(), IconsResolver({
+        prefix: 'Icon',
+      })],
       imports: ['vue', 'vue-router', 'pinia'],
       dts: './types/auto-imports.d.ts',
       // eslint 报错解决：'ref' is not defined
@@ -20,7 +24,9 @@ export function autoComponentsPlugin() {
       },
     }),
     Components({
-      resolvers: [ElementPlusResolver()],
+      resolvers: [ElementPlusResolver(), IconsResolver({
+        enabledCollections: ['ep'],
+      })],
       dts: './types/components.d.ts',
     }),
     createStyleImportPlugin({
@@ -34,6 +40,9 @@ export function autoComponentsPlugin() {
           },
         },
       ],
+    }),
+    Icons({
+      autoInstall: true,
     }),
   ]
 }
