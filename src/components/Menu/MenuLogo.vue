@@ -1,0 +1,48 @@
+<script setup lang="ts">
+import MenuLogo from '@/assets/logo.svg'
+import { collapseStore } from '@/stores/collapse/index'
+
+const title = ref('Ft Admin El')
+// 获取store
+const store = collapseStore()
+
+const show = ref(true)
+
+watch(
+  () => store.getCollapse,
+  (collapse: boolean) => {
+    if (!collapse) {
+      setTimeout(() => {
+        show.value = !collapse
+      }, 300)
+    }
+    else {
+      show.value = !collapse
+    }
+  },
+)
+</script>
+
+<template>
+  <div class="logo" w="[100%]" h-60px flex-middle text-center lh-60px>
+    <img alt="logo" class="logo-img" :src="MenuLogo" draggable="true" drag-none mx-14px h-36px w-36px>
+    <div w="[100%]" ml-8 flex>
+      <span v-if="show" class="logo-title" text-18px>{{ title }}</span>
+    </div>
+  </div>
+</template>
+
+<style scoped lang="scss">
+.logo {
+  background: #2b2f3a;
+
+  .logo-title {
+    font-family: FangSong;
+    font-size: 18px;
+    font-weight: 800;
+    line-height: 60px;
+    color: #fff;
+    pointer-events: none;
+  }
+}
+</style>

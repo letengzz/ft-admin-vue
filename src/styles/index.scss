@@ -1,10 +1,18 @@
+/* stylelint-disable property-no-vendor-prefix */
 // 全局样式
 html,
-body {
+body,
+#app {
+  box-sizing: border-box;
+  height: 100%;
   padding: 0;
   margin: 0;
 }
 
-#app {
-  height: 100vh;
+body,
+body * {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }

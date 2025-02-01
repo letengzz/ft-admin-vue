@@ -24,9 +24,12 @@ export function autoComponentsPlugin() {
       },
     }),
     Components({
-      resolvers: [ElementPlusResolver(), IconsResolver({
-        enabledCollections: ['ep'],
-      })],
+      resolvers: [
+        ElementPlusResolver(),
+        IconsResolver({
+          enabledCollections: ['ep'],
+        }),
+      ],
       dts: './types/components.d.ts',
     }),
     createStyleImportPlugin({
