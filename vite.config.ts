@@ -3,10 +3,10 @@ import { fileURLToPath, URL } from 'node:url'
 import { defineConfig, loadEnv } from 'vite'
 
 // 自动引入样式
-import { useBuild } from './build/build'
-import { usePlugins } from './build/plugins'
-import { useServer } from './build/server'
-import { wrapperEnv } from './build/utils'
+import { useBuild } from './config/build'
+import { usePlugins } from './config/plugins'
+import { useServer } from './config/server'
+import { wrapperEnv } from './config/utils'
 
 // https://vite.dev/config/
 export default defineConfig(({ command, mode }) => {

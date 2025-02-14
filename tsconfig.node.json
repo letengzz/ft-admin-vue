@@ -14,7 +14,7 @@
     "cypress.config.*",
     "nightwatch.conf.*",
     "playwright.config.*",
-    "build",
+    "config",
     "types"
   ]
 }
