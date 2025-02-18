@@ -4,3 +4,8 @@ export interface Result<T> {
   message: string
   data: T
 }
+// 分页数据
+export interface PagingRes<T> {
+  records: T
+  total: number
+}
