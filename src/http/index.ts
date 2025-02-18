@@ -137,8 +137,8 @@ class Http {
   }
 
   /* DELETE请求 */
-  delete<T = Result<never>>(url: string): Promise<T> {
-    return this.instance.delete(url)
+  delete<T = Result<never>>(url: string, data?: object): Promise<T> {
+    return this.instance.delete(url, { data })
   }
 
   /* 图片上传 */
