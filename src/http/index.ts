@@ -5,19 +5,13 @@ import type {
   AxiosResponse,
   InternalAxiosRequestConfig,
 } from 'axios'
+import type { Result } from '../../types/api'
 import axios from 'axios'
 import { ElMessage } from 'element-plus'
 
 const config = {
-  baseUrl: 'http://localhost:8080', // 请求接口的地址
+  baseURL: '/api', // 请求接口的地址
   timeout: 10000,
-}
-
-// 定义返回值类型
-export interface Result<T> {
-  code: number
-  msg: string
-  data: T
 }
 
 class Http {
