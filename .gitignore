@@ -34,3 +34,4 @@ playwright-report/
 
 types/*
 !types/env.d.ts
+!types/api.d.ts
