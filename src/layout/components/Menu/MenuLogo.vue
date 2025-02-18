@@ -2,7 +2,8 @@
 import MenuLogo from '@/assets/logo.svg'
 import { collapseStore } from '@/stores/collapse/index'
 
-const title = ref('Ft Admin El')
+const title = ref(import.meta.env.VITE_APP_TITLE || 'Ft Admin El')
+
 // 获取store
 const store = collapseStore()
 

@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import BreadCrumb from '@/components/Header/BreadCrumb.vue'
-import Collapse from '@/components/Header/Collapse.vue'
+import BreadCrumb from '@/layout/components/Header/BreadCrumb.vue'
+import Collapse from '@/layout/components/Header/Collapse.vue'
 </script>
 
 <template>

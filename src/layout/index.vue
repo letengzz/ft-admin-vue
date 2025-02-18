@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import Header from '@/components/Header/Header.vue'
-import MenuBar from '@/components/Menu/MenuBar.vue'
-import CloseTabs from '@/components/Tabs/CloseTabs.vue'
-import Tabs from '@/components/Tabs/Tabs.vue'
+import Header from '@/layout/components/Header/Header.vue'
+import MenuBar from '@/layout/components/Menu/MenuBar.vue'
+import CloseTabs from '@/layout/components/Tabs/CloseTabs.vue'
+import Tabs from '@/layout/components/Tabs/Tabs.vue'
 </script>
 
 <template>

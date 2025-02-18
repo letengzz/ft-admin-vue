@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import MenuItem from '@/components/Menu/MenuItem.vue'
-import MenuLogo from '@/components/Menu/MenuLogo.vue'
+import MenuItem from '@/layout/components/Menu/MenuItem.vue'
+import MenuLogo from '@/layout/components/Menu/MenuLogo.vue'
 import { collapseStore } from '@/stores/collapse/index.ts'
 import { reactive } from 'vue'
 import { useRoute } from 'vue-router'
