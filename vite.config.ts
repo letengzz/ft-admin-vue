@@ -18,7 +18,7 @@ export default defineConfig(({ command, mode }) => {
   // 环境变量值转换
   const viteEnv = wrapperEnv(env);
   return {
-    base: process.env.NODE_ENV === "production" ? "./" : "/simple-vue3-elp-uno-template/",
+    base: process.env.NODE_ENV === "production" ? "./" : "/ft-admin-vue/",
     plugins: usePlugins(isBuild, viteEnv),
     build: useBuild(viteEnv),
     server: useServer(viteEnv),
