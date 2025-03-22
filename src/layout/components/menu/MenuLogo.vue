@@ -5,36 +5,22 @@ const title = ref("通用权限系统");
 </script>
 
 <template>
-  <div class="logo">
-    <img alt="logo" :src="MenuLogo" />
-    <span class="logo-title">{{ title }}</span>
+  <div class="logo" w="[100%]" h-60px flex-middle text-center lh-60px>
+    <img alt="logo" class="logo-img" :src="MenuLogo" draggable="true" mx-14px h-36px w-36px>
+    <div w="[100%]" ml-8 flex>
+      <span class="logo-title" pointer-events-none text-18px font-800 lh-60px>{{ title }}</span>
+    </div>
   </div>
 </template>
 
 <style scoped lang="scss">
 .logo {
-  display: flex;
-  width: 100%;
-  height: 60px;
-  line-height: 60px;
   background: #2b2f3a;
-  text-align: center;
   cursor: pointer;
-  align-items: center;
-
-  img {
-    width: 36px;
-    height: 36px;
-    margin-left: 20px;
-    margin-right: 12px;
-  }
 
   .logo-title {
-    color: #fff;
-    font-weight: 800;
-    line-height: 60px;
-    font-size: 18px;
     font-family: FangSong;
+    color: #fff;
   }
 }
 </style>
