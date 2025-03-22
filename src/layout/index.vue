@@ -1,10 +1,17 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import Header from "@/layout/components/header/Header.vue";
+import MenuBar from "@/layout/components/menu/MenuBar.vue";
+</script>
 
 <template>
   <el-container class="layout-container">
-    <el-aside width="200px" class="leftmenu">Aside</el-aside>
+    <el-aside width="230px" class="leftmenu">
+      <MenuBar />
+    </el-aside>
     <el-container>
-      <el-header class="header">Header</el-header>
+      <el-header class="header">
+        <Header />
+      </el-header>
       <el-main class="content">Main</el-main>
     </el-container>
   </el-container>
@@ -19,7 +26,7 @@
   }
 
   .leftmenu {
-    background-color: antiquewhite;
+    background-color: #304156;
   }
 }
 </style>
