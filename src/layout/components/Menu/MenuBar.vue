@@ -1,11 +1,20 @@
 <script setup lang="ts">
-import { ref, reactive } from "vue";
 import MenuItem from "./MenuItem.vue";
 import MenuLogo from "./MenuLogo.vue";
 
 const isCollapse = ref(false);
-//菜单列表
+// 菜单列表
 const menuList = reactive([
+  {
+    path: "/dashboard",
+    component: "/dashboard/index",
+    name: "dashboard",
+    meta: {
+      title: "首页",
+      icon: "House",
+      roles: ["sys:dashboard"],
+    },
+  },
   {
     path: "/system",
     component: "Layout",
@@ -82,25 +91,31 @@ const menuList = reactive([
     ],
   },
 ]);
-const handleOpen = (key: string, keyPath: string[]) => {
-  console.log(key, keyPath);
-};
-const handleClose = (key: string, keyPath: string[]) => {
-  console.log(key, keyPath);
-};
+// const handleOpen = (key: string, keyPath: string[]) => {
+//   console.log(key, keyPath);
+// };
+// const handleClose = (key: string, keyPath: string[]) => {
+//   console.log(key, keyPath);
+// };
+const route = useRoute();
+//获取激活的菜单
+const defaultActive = computed(() => {
+  const { path } = route;
+  return path;
+});
 </script>
 
 <template>
   <MenuLogo />
-  <el-menu default-active="2" class="el-menu-vertical-demo" :collapse="isCollapse" @open="handleOpen"
-    @close="handleClose" background-color="#304156">
-    <MenuItem :menuList="menuList" />
+  <el-menu :default-active="defaultActive" class="el-menu-vertical-demo" :collapse="isCollapse" unique-opened
+    background-color="#304156" text-color="#f4f4f5" active-text-color="#409eff" router>
+    <MenuItem :menu-list="menuList" />
   </el-menu>
 </template>
 
 <style scoped lang="scss">
 .el-menu-vertical-demo:not(.el-menu--collapse) {
-  width: 230px;
+  width: 200px;
   min-height: 400px;
 }
 
