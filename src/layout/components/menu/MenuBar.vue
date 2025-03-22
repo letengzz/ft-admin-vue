@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref, reactive } from "vue";
 import MenuItem from "./MenuItem.vue";
+import MenuLogo from "./MenuLogo.vue";
 
 const isCollapse = ref(false);
 //菜单列表
@@ -90,6 +91,7 @@ const handleClose = (key: string, keyPath: string[]) => {
 </script>
 
 <template>
+  <MenuLogo />
   <el-menu default-active="2" class="el-menu-vertical-demo" :collapse="isCollapse" @open="handleOpen"
     @close="handleClose" background-color="#304156">
     <MenuItem :menuList="menuList" />
