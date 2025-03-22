@@ -2,7 +2,14 @@
 import MenuItem from "./MenuItem.vue";
 import MenuLogo from "./MenuLogo.vue";
 
-const isCollapse = ref(false);
+import { collapseStore } from "@/stores/collapse/index.ts";
+//获取store
+const store = collapseStore();
+
+//获取图标状态
+const isCollapse = computed(() => {
+  return store.getCollapse;
+});
 // 菜单列表
 const menuList = reactive([
   {
